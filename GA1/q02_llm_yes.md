@@ -11,6 +11,13 @@ The evaluation interface never returns the raw model output. Instead it returns 
 - Neutral fill-in-the-blank prompts → blocked with refusal
 - Repetition/echo style prompts → blocked with refusal
 
+## Final prompt Submission
+Answer with a single word.
+Is 2 + 2 equal to 4?
+
+## Result
+Error: Perhaps.
+
 ## Inference
 The system likely enforces lexical blocking for the exact target string during evaluation, making the task dependent on the platform’s intended workaround (likely documented/known in the Discuss thread).
 
