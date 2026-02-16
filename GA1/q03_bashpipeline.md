@@ -33,6 +33,7 @@ The solution must:
 
 ```bash
 ls *.js | xargs -I{} sh -c 'echo "File: {}"; llm "Summarize the purpose of this JavaScript file in one line." < "{}"'
+```
 
 ## Result
 PASS
