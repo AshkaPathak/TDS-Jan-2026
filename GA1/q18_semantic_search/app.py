@@ -151,8 +151,11 @@ def search(req: SearchRequest) -> Dict[str, Any]:
         candidates = results[:rerankK]
 
         q_tokens = _tokenize(query)
-        bm25_scores = [_bm25.get_score(q_tokens, c["_idx"]) for c in candidates]
-        bm25_norm = _normalize_0_1([float(x) for x in bm25_scores])
+
+        # BM25 scores for ALL docs, then pick candidate indices
+        all_bm25 = _bm25.get_scores(q_tokens)  # aligned with _docs
+        bm25_scores = [float(all_bm25[c["_idx"]]) for c in candidates]
+        bm25_norm = _normalize_0_1(bm25_scores)
 
         for c, s in zip(candidates, bm25_norm):
             c["score"] = round(float(s), 6)
@@ -160,6 +163,7 @@ def search(req: SearchRequest) -> Dict[str, Any]:
         candidates_sorted = sorted(candidates, key=lambda x: x["score"], reverse=True)
         results = candidates_sorted + results[rerankK:]
         reranked = True
+
 
     for r in results:
         r.pop("_idx", None)
