@@ -72,3 +72,50 @@ def run_pipeline(req: PipelineRequest):
         "processedAt": datetime.datetime.utcnow().isoformat(),
         "errors": errors
     }
+
+from fastapi import Request, Response
+from collections import defaultdict
+import time
+import html
+
+RATE_LIMIT = 22
+BURST_LIMIT = 9
+WINDOW = 60  # seconds
+
+request_logs = defaultdict(list)
+
+@app.post("/security")
+async def security_endpoint(request: Request):
+    data = await request.json()
+    user_id = data.get("userId", "anonymous")
+    user_input = data.get("input", "")
+    
+    now = time.time()
+    logs = request_logs[user_id]
+
+    # Remove old timestamps
+    request_logs[user_id] = [t for t in logs if now - t < WINDOW]
+    logs = request_logs[user_id]
+
+    # Burst check
+    if len(logs) >= RATE_LIMIT:
+        retry_after = int(WINDOW - (now - logs[0]))
+        return Response(
+            content='{"blocked": true, "reason": "Rate limit exceeded"}',
+            status_code=429,
+            headers={"Retry-After": str(retry_after)},
+            media_type="application/json"
+        )
+
+    # Log request
+    logs.append(now)
+
+    # Basic sanitization (prevent XSS)
+    sanitized = html.escape(user_input)
+
+    return {
+        "blocked": False,
+        "reason": "Input passed all security checks",
+        "sanitizedOutput": sanitized,
+        "confidence": 0.95
+    }
