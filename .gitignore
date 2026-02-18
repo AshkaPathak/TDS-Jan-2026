@@ -1,2 +1,11 @@
 session.cast
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+
+# OS
 .DS_Store
+
