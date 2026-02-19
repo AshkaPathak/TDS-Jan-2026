@@ -1,9 +1,7 @@
 name: GA2 Q6 Action
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   test:
