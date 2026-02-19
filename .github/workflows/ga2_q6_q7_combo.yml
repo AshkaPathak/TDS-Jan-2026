@@ -1,16 +1,20 @@
-name: GA2 Q7 Cache Action
+name: GA2 Q6+Q7 Combined Check
 
 on:
   workflow_dispatch:
 
 jobs:
-  cache-job:
+  combined:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
+      # Q6 requirement: step name contains email
+      - name: 23f3002663@ds.study.iitm.ac.in
+        run: echo "GA2 Q6 requirement satisfied"
+
+      # Q7 requirement: actions/cache@v4 with exact key
       - name: Cache dependencies
         id: cache
         uses: actions/cache@v4
@@ -18,6 +22,7 @@ jobs:
           path: ~/.cache
           key: cache-e04ed7f
 
+      # Q7 requirement: exact step name + echo cache hit/miss
       - name: prime-cache-e04ed7f
         run: echo "Cache hit? ${{ steps.cache.outputs.cache-hit }}"
 
