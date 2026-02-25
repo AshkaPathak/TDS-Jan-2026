@@ -1,8 +1,10 @@
 name: Daily DevSync Update - 23f3002663@ds.study.iitm.ac.in
 
+permissions:
+  contents: write
+
 on:
   schedule:
-    # Runs once per day at 10:30 UTC
     - cron: "30 10 * * *"
   workflow_dispatch:
 
@@ -13,6 +15,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          persist-credentials: true
 
       - name: Configure Git
         run: |
@@ -23,8 +27,8 @@ jobs:
         run: |
           echo "Last update: $(date -u)" > daily_update.txt
 
-      - name: Commit changes
+      - name: Commit and Push
         run: |
           git add daily_update.txt
-          git commit -m "Automated daily update - 23f3002663@ds.study.iitm.ac.in" || echo "No changes to commit"
+          git commit -m "Automated daily update - 23f3002663@ds.study.iitm.ac.in"
           git push
