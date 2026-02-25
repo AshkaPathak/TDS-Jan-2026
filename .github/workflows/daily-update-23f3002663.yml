@@ -32,5 +32,5 @@ jobs:
       - name: Commit and Push - 23f3002663@ds.study.iitm.ac.in
         run: |
           git add daily_update.txt
-	  git commit -m "Automated daily update - 23f3002663@ds.study.iitm.ac.in [skip ci]"
+          git commit -m "Automated daily update - 23f3002663@ds.study.iitm.ac.in [skip ci]"
           git push
