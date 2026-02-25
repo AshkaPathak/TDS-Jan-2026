@@ -1,3 +1,4 @@
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from openai import OpenAI
@@ -7,6 +8,14 @@ import os, json
 load_dotenv()
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=False,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 client = OpenAI(
     api_key=os.getenv("OPENAI_API_KEY"),
