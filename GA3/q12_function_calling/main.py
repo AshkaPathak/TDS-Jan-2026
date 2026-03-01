@@ -42,7 +42,9 @@ def make_response(name: str, ordered_items: list[tuple[str, object]]):
 
 
 @app.get("/execute")
-def execute(q: str = Query(...)):
+def execute(q: str | None = Query(None)):
+    if not q:
+        return {"name": "help", "arguments": "{}"}
     q = q.strip()
 
     m = RE_TICKET.match(q)
