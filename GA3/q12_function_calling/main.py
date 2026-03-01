@@ -15,12 +15,22 @@ app.add_middleware(
 )
 
 # Regex patterns for the templated queries
-RE_TICKET = re.compile(r"^What is the status of ticket (\d+)\?$")
-RE_MEETING = re.compile(r"^Schedule a meeting on (\d{4}-\d{2}-\d{2}) at (\d{2}:\d{2}) in (.+)\.$")
-RE_EXPENSE = re.compile(r"^Show my expense balance for employee (\d+)\.$")
-RE_BONUS = re.compile(r"^Calculate performance bonus for employee (\d+) for (\d{4})\.$")
-RE_ISSUE = re.compile(r"^Report office issue (\d+) for the (.+) department\.$")
+# More tolerant patterns (case-insensitive, flexible spaces, optional punctuation)
+RE_TICKET = re.compile(r"(?i)^\s*What\s+is\s+the\s+status\s+of\s+ticket\s+(\d+)\s*\??\s*$")
 
+RE_MEETING = re.compile(
+    r"(?i)^\s*Schedule\s+a\s+meeting\s+on\s+(\d{4}-\d{2}-\d{2})\s+at\s+(\d{2}:\d{2})\s+in\s+(.+?)\s*\.?\s*$"
+)
+
+RE_EXPENSE = re.compile(r"(?i)^\s*Show\s+my\s+expense\s+balance\s+for\s+employee\s+(\d+)\s*\.?\s*$")
+
+RE_BONUS = re.compile(
+    r"(?i)^\s*Calculate\s+performance\s+bonus\s+for\s+employee\s+(\d+)\s+for\s+(\d{4})\s*\.?\s*$"
+)
+
+RE_ISSUE = re.compile(
+    r"(?i)^\s*Report\s+office\s+issue\s+(\d+)\s+for\s+(?:the\s+)?(.+?)\s+department\s*\.?\s*$"
+)
 
 def make_response(name: str, ordered_items: list[tuple[str, object]]):
     """
