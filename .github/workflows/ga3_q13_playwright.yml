@@ -8,22 +8,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "20"
 
       - name: Install dependencies
-	working-directory: GA3/q13_github_action_scrape_table_sums_playwright/playwright
+        working-directory: GA3/q13_github_action_scrape_table_sums_playwright/playwright
         run: npm install
 
       - name: Install Playwright Chromium
-	working-directory: GA3/q13_github_action_scrape_table_sums_playwright/playwright
+        working-directory: GA3/q13_github_action_scrape_table_sums_playwright/playwright
         run: npx playwright install --with-deps chromium
 
       - name: 23f3002663@ds.study.iitm.ac.in - run scraper
-	working-directory: GA3/q13_github_action_scrape_table_sums_playwright/playwright
+        working-directory: GA3/q13_github_action_scrape_table_sums_playwright/playwright
         run: npm run start
