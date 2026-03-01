@@ -17,13 +17,13 @@ jobs:
           node-version: "20"
 
       - name: Install dependencies
-        working-directory: playwright
+	working-directory: GA3/q13_github_action_scrape_table_sums_playwright/playwright
         run: npm install
 
       - name: Install Playwright Chromium
-        working-directory: playwright
+	working-directory: GA3/q13_github_action_scrape_table_sums_playwright/playwright
         run: npx playwright install --with-deps chromium
 
       - name: 23f3002663@ds.study.iitm.ac.in - run scraper
-        working-directory: playwright
+	working-directory: GA3/q13_github_action_scrape_table_sums_playwright/playwright
         run: npm run start
