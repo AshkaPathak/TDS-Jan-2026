@@ -15,3 +15,8 @@ package-lock.json
 package.json
 .venv/
 bounding_box_task.pdf
+# --- GA3 Q13: keep Playwright scraper files tracked ---
+!GA3/q13_github_action_scrape_table_sums_playwright/playwright/package.json
+!GA3/q13_github_action_scrape_table_sums_playwright/playwright/package-lock.json
+!GA3/q13_github_action_scrape_table_sums_playwright/playwright/scrape.js
+!GA3/q13_github_action_scrape_table_sums_playwright/q13_github_action_scrape_table_sums_playwright.md
