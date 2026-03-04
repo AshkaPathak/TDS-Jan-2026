@@ -6,6 +6,7 @@ app = FastAPI()
 def root():
     return {"status": "ok"}
 
+@app.post("/")
 @app.post("/sentiment")
 def sentiment(data: dict):
     results = []
@@ -16,16 +17,16 @@ def sentiment(data: dict):
     for sentence in data["sentences"]:
         s = sentence.lower()
 
-        if any(word in s for word in positive_words):
-            sentiment = "happy"
-        elif any(word in s for word in negative_words):
-            sentiment = "sad"
+        if any(w in s for w in positive_words):
+            label = "happy"
+        elif any(w in s for w in negative_words):
+            label = "sad"
         else:
-            sentiment = "neutral"
+            label = "neutral"
 
         results.append({
             "sentence": sentence,
-            "sentiment": sentiment
+            "sentiment": label
         })
 
     return {"results": results}
