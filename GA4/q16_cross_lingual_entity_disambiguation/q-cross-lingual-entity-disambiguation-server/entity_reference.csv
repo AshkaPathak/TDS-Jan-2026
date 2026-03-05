@@ -1,0 +1,20 @@
+entity_id,canonical_name,role,era,region
+E001,"Charles I of England",King,"1600–1649",England
+E002,"Philip II of Spain",King,"1527–1598",Spain
+E003,"Philip IV of Spain",King,"1605–1665",Spain
+E004,"Henry IV of France",King,"1553–1610",France
+E005,"John I of Portugal",King,"1357–1433",Portugal
+E006,"William I of England",King,"1028–1087",England
+E007,"Frederick the Great",King,"1712–1786",Prussia
+E008,"George III of Britain",King,"1738–1820",Great Britain
+E009,"Alexander I of Russia",Emperor,"1777–1825",Russia
+E010,"Peter III of Russia",Emperor,"1728–1762",Russia
+E011,"Louis XVI of France",King,"1754–1793",France
+E012,"George I of Greece",King,"1845–1913",Greece
+E013,"Alexander II of Russia",Emperor,"1818–1881",Russia
+E014,"Henry VIII of England",King,"1491–1547",England
+E015,"Peter the Great",Tsar/Emperor,"1672–1725",Russia
+E016,"Ivan III of Russia",Grand Prince,"1440–1505",Russia
+E017,"John II of Castile",King,"1405–1454",Castile
+E018,"Charles V, Holy Roman Emperor",Emperor,"1500–1558",Holy Roman Empire
+E019,"Catherine the Great",Empress,"1729–1796",Russia
