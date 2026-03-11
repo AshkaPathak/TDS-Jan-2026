@@ -1,60 +1,8 @@
-# GA5 — Q15: QGIS — Largest Voronoi Service Area
-
-## Problem Summary
-
-The city education authority wants to identify which school's catchment area is the largest, indicating the most underserved zone with the greatest travel distance for students.
-
-The service regions are modeled using **Voronoi (Thiessen) polygons**, where each polygon represents the area closer to one school than to any other.
-
-The task is to compute the **area of the largest Voronoi service polygon** in square kilometres.
-
-The provided input file is:
-
-```text
-q-geospatial-qgis-gap.geojson
-```
-
-The expected answer is the area of the largest polygon, rounded to **two decimal places**.
-
----
-
-## Approach
-
-Although the prompt describes a QGIS workflow, the same geometric result can be computed accurately in Python.
-
-The solution follows these steps:
-
-1. Load the school point locations from the GeoJSON file.
-2. Reproject the points to a **projected CRS** so area is measured in metres rather than degrees.
-3. Generate Voronoi polygons from the school locations.
-4. Clip the Voronoi regions to a buffered bounding box, similar to QGIS's **buffer region** option.
-5. Compute the area of each polygon in square metres.
-6. Convert the area to square kilometres.
-7. Identify the maximum polygon area.
-
----
-
-## Why Reprojection Is Necessary
-
-The original coordinates are geographic coordinates (latitude/longitude), which are not suitable for direct area calculations.
-
-To compute area correctly, the points must be reprojected to a CRS with metric units. In this solution, the layer was reprojected to:
-
-```text
-EPSG:3857
-```
-
-This allows polygon areas to be computed in square metres and then converted to square kilometres.
-
----
-
-## Python Implementation
-
-```python
 import geopandas as gpd
 import numpy as np
 from scipy.spatial import Voronoi
 from shapely.geometry import Polygon
+from shapely.ops import unary_union
 
 # Convert infinite Voronoi regions to finite polygons
 def voronoi_finite_polygons_2d(vor, radius=None):
@@ -67,7 +15,6 @@ def voronoi_finite_polygons_2d(vor, radius=None):
     center = vor.points.mean(axis=0)
     if radius is None:
         radius = np.ptp(vor.points, axis=0).max() * 2
-
     all_ridges = {}
     for (p1, p2), (v1, v2) in zip(vor.ridge_points, vor.ridge_vertices):
         all_ridges.setdefault(p1, []).append((p2, v1, v2))
@@ -110,7 +57,7 @@ def voronoi_finite_polygons_2d(vor, radius=None):
     return new_regions, np.asarray(new_vertices)
 
 
-# Load GeoJSON
+# Load points
 gdf = gpd.read_file("q-geospatial-qgis-gap.geojson")
 
 # Reproject to metric CRS
@@ -119,17 +66,16 @@ gdf = gdf.to_crs(epsg=3857)
 # Extract coordinates
 points = np.array([[geom.x, geom.y] for geom in gdf.geometry])
 
-# Build Voronoi diagram
+# Build Voronoi
 vor = Voronoi(points)
 regions, vertices = voronoi_finite_polygons_2d(vor)
 
-# Create buffered bounding box
+# Clip to buffered bounding box (similar to QGIS buffer region idea)
 minx, miny, maxx, maxy = gdf.total_bounds
 dx = maxx - minx
 dy = maxy - miny
 buffer_x = dx * 0.1
 buffer_y = dy * 0.1
-
 bbox = Polygon([
     (minx - buffer_x, miny - buffer_y),
     (maxx + buffer_x, miny - buffer_y),
@@ -137,7 +83,6 @@ bbox = Polygon([
     (minx - buffer_x, maxy + buffer_y)
 ])
 
-# Clip Voronoi polygons to bounding box
 polys = []
 for region in regions:
     polygon = Polygon(vertices[region])
@@ -146,43 +91,8 @@ for region in regions:
 
 vor_gdf = gpd.GeoDataFrame(geometry=polys, crs=gdf.crs)
 
-# Compute area in km²
+# Area in km²
 vor_gdf["area_km2"] = vor_gdf.geometry.area / 1_000_000
 
 largest = vor_gdf["area_km2"].max()
 print(round(largest, 2))
-```
-
----
-
-## Result
-
-After constructing the Voronoi polygons, clipping them to the buffered region, and computing their areas, the largest service area was found to be:
-
-```text
-67.02
-```
-
-This value is in square kilometres.
-
----
-
-## Why This Works
-
-This method reproduces the same core logic as the QGIS workflow:
-
-- generate Voronoi service regions from school points
-- use a projected CRS for valid area computation
-- compute polygon area in square metres
-- convert to square kilometres
-- select the maximum area
-
-The buffered bounding box mirrors QGIS's Voronoi buffer region idea, preventing infinite polygons from causing invalid area calculations.
-
----
-
-## Final Answer
-
-```text
-67.02
-```

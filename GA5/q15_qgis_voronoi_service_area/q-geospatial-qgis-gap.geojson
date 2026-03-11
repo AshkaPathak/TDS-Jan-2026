@@ -1,0 +1,117 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "School-1",
+        "name": "School 1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.16377720532720386,
+          51.51769289936331
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "School-2",
+        "name": "School 2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.17101662268432044,
+          51.554871887177775
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "School-3",
+        "name": "School 3"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1417838709534819,
+          51.54539617190921
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "School-4",
+        "name": "School 4"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.11500245016623488,
+          51.486964726749534
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "School-5",
+        "name": "School 5"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.15400056904486792,
+          51.465539808500154
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "School-6",
+        "name": "School 6"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.0718896038605295,
+          51.45144516189587
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "School-7",
+        "name": "School 7"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.07023294218576767,
+          51.47197965078503
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "School-8",
+        "name": "School 8"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.1684338867320529,
+          51.512681542260644
+        ]
+      }
+    }
+  ]
+}
