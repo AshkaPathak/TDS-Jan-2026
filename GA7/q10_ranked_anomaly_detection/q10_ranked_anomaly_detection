@@ -1,0 +1,51 @@
+# GA7 — Q10: Ranked Anomaly Detection
+
+## Problem Summary
+
+The task is to process a dataset of system metrics, compute deviation scores for each row based on expected ranges, classify anomalies into severity levels, and output a sorted list of anomalous Event IDs.
+
+---
+
+## Step 1 — Data Cleaning
+
+- Trim whitespace from all fields  
+- Extract numeric values from:
+  - Observed Value  
+  - Range Min  
+  - Range Max  
+- Ignore Notes column  
+- Use only numeric Event ID (e.g., EV-00006 → 6)
+
+---
+
+## Step 2 — Deviation Formula
+
+For each row:
+
+deviation = |value − nearest boundary| / (Range Max − Range Min)
+
+- If value is within [Range Min, Range Max] → deviation = 0 → Normal (exclude)
+
+---
+
+## Step 3 — Severity Classification
+
+- S1 (Critical): deviation > 0.50  
+- S2 (Moderate): 0.20 < deviation ≤ 0.50  
+- S3 (Minor): 0 < deviation ≤ 0.20  
+
+Only include anomalous rows (deviation > 0)
+
+---
+
+## Step 4 — Sorting Rules
+
+- First by severity: S1 → S2 → S3  
+- Then within each severity: sort by deviation descending  
+
+---
+
+## Final Answer
+
+```text
+[(6, "S1"), (10, "S1"), (20, "S2"), (29, "S2"), (2, "S3"), (14, "S3")]
