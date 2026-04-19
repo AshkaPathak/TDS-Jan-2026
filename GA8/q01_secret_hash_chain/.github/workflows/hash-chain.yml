@@ -1,0 +1,25 @@
+name: Secret Hash Chain
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Compute hash afbc3d62
+        run: |
+          echo -n "${MY_SECRET}github-verified" | sha256sum | cut -c1-10 > verify_hash.txt
+        env:
+          MY_SECRET: ${{ secrets.MY_SECRET }}
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: verify-hash-afbc3d62
+          path: verify_hash.txt
