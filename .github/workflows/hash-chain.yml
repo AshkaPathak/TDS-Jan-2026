@@ -10,7 +10,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Compute hash afbc3d62
         run: |
@@ -19,7 +19,7 @@ jobs:
           MY_SECRET: ${{ secrets.MY_SECRET }}
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: verify-hash-afbc3d62
           path: verify_hash.txt
