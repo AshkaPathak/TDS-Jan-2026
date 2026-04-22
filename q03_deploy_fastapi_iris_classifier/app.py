@@ -6,7 +6,7 @@ import numpy as np
 app = FastAPI()
 
 iris = load_iris()
-model = DecisionTreeClassifier(random_state=42)
+model = DecisionTreeClassifier(random_state=42, min_samples_leaf=2)
 model.fit(iris.data, iris.target)
 class_names = ["setosa", "versicolor", "virginica"]
 
