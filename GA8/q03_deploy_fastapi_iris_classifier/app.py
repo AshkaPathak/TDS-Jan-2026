@@ -1,14 +1,16 @@
 from fastapi import FastAPI
-from sklearn.datasets import load_iris
-from sklearn.tree import DecisionTreeClassifier
-import numpy as np
 
-app = FastAPI()
+app = FastAPI(title="GA8 Q3 Iris Classifier")
 
-iris = load_iris()
-model = DecisionTreeClassifier(random_state=42, min_samples_leaf=2)
-model.fit(iris.data, iris.target)
-class_names = ["setosa", "versicolor", "virginica"]
+CLASS_NAMES = ["setosa", "versicolor", "virginica"]
+
+
+def classify(sl: float, sw: float, pl: float, pw: float) -> int:
+    if pl < 2.5:
+        return 0
+    if pw < 1.8:
+        return 1
+    return 2
 
 
 @app.get("/health")
@@ -18,6 +20,5 @@ async def health():
 
 @app.get("/predict")
 async def predict(sl: float, sw: float, pl: float, pw: float):
-    features = np.array([[sl, sw, pl, pw]])
-    pred = int(model.predict(features)[0])
-    return {"prediction": pred, "class_name": class_names[pred]}
+    pred = classify(sl, sw, pl, pw)
+    return {"prediction": pred, "class_name": CLASS_NAMES[pred]}
