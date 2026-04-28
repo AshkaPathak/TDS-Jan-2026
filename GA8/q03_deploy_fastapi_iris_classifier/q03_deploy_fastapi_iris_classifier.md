@@ -144,39 +144,44 @@ This was the correct configuration for passing the grader.
 
 ## Step 4 — Deploy the App
 
-The app was deployed on Render, which is one of the accepted free hosting platforms listed in the question.
+The original Render deployment timed out during grading because the free-tier service could sleep after inactivity. To avoid the 10-second `/health` timeout, the app was redeployed on Azure App Service using the same FastAPI code.
 
-Deployment configuration used:
+Deployment details:
 
-- **Platform:** Render
-- **Root Directory:** `q03_deploy_fastapi_iris_classifier`
-- **Build Command:**
-
-```bash
-pip install -r requirements.txt
-```
-
-- **Start Command:**
+- **Platform:** Azure App Service
+- **Subscription:** Azure for Students
+- **Resource Group:** `tds-ga8-rg`
+- **App Service Plan:** `tds-ga8-plan-sea`
+- **Region:** Southeast Asia
+- **Runtime:** Python 3.11
+- **Startup Command:**
 
 ```bash
-python -m uvicorn app:app --host 0.0.0.0 --port $PORT
+python -m uvicorn app:app --host 0.0.0.0 --port 8000
 ```
 
-Using `python -m uvicorn` was important because it ensured the correct Python environment and installed packages were used during startup.
+The following app settings were configured:
+
+```text
+WEBSITES_PORT=8000
+SCM_DO_BUILD_DURING_DEPLOYMENT=true
+```
+
+The service was deployed using zip deployment.
 
 ---
 
 ## Step 5 — Verify the Deployed Endpoints
 
-After deployment, the service was tested using the public Render URL.
+After deployment, the service was tested using the public Azure URL.
 
 Health endpoint:
 
 ```text
-https://tds-jan-2026-4.onrender.com/health
+https://tds-ga8-q03-iris-ashka.azurewebsites.net/health
 ```
 
-Expected response:
+Response:
 
 ```json
 {"status":"ok"}
@@ -185,10 +190,10 @@ Expected response:
 Prediction endpoint:
 
 ```text
-https://tds-jan-2026-4.onrender.com/predict?sl=7.4&sw=3.7&pl=4.5&pw=1.7
+https://tds-ga8-q03-iris-ashka.azurewebsites.net/predict?sl=7.4&sw=3.7&pl=4.5&pw=1.7
 ```
 
-Expected response:
+Response:
 
 ```json
 {"prediction":1,"class_name":"versicolor"}
@@ -198,22 +203,26 @@ Expected response:
 
 ## Deployment Issue Faced and Resolved
 
-A timeout occurred when the portal checked the `/health` endpoint. This happened because Render free-tier services go to sleep after inactivity. When a sleeping service receives the first request, it may take several seconds to wake up, which can exceed the grader’s timeout limit.
+A timeout occurred when the portal checked the original Render `/health` endpoint:
+
+```text
+Error: Request to https://tds-jan-2026-4.onrender.com/health timed out after 10 seconds.
+```
+
+This happened because Render free-tier services can sleep after inactivity. When a sleeping service receives the first request, it may take longer than the grader’s timeout limit.
 
 Resolution:
 
-- Manually open the `/health` endpoint first
-- Wait until the service wakes up and returns `{"status":"ok"}`
-- Then immediately click the portal’s **Check** button
-
-This successfully resolved the timeout issue.
+- Redeployed the same FastAPI service on Azure App Service
+- Verified `/health` and `/predict` returned within the timeout window
+- Submitted the Azure URL instead of the Render URL
 
 ---
 
 ## Final Submitted URL
 
 ```text
-https://tds-jan-2026-4.onrender.com
+https://tds-ga8-q03-iris-ashka.azurewebsites.net
 ```
 
 ---
@@ -246,9 +255,9 @@ This solution satisfied all requirements:
 - Implemented `/health` and `/predict`
 - Returned the required JSON format
 - Correctly classified the unique sample as `versicolor`
-- Deployed successfully on Render
+- Redeployed successfully on Azure App Service to avoid Render timeout failures
 - Submitted a valid public URL
 
 Final deployed URL:
 
-`https://tds-jan-2026-4.onrender.com`
+`https://tds-ga8-q03-iris-ashka.azurewebsites.net`
