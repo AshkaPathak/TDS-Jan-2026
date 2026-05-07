@@ -1,24 +1,44 @@
-GA2/q01_image_compression/palette.png
-session.cast
 # Python
 __pycache__/
-*.pyc
+*.py[cod]
+*.pyo
+.python-version
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments and local configuration
+.env
+.env.*
+!.env.example
 .venv/
 venv/
-.env
+env/
 
-# OS
+# OS and editor files
 .DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
 
+# Node and browser automation
 node_modules/
-package-lock.json
-package.json
-.venv/
+playwright-report/
+test-results/
+
+# Course/generated local artifacts
+session.cast
 bounding_box_task.pdf
-# --- GA3 Q13: keep Playwright scraper files tracked ---
+GA2/q01_image_compression/palette.png
+GA8/q01_secret_hash_chain/verify_hash.txt
+models/
+
+# Keep required Playwright scraper files tracked for GA3 Q13.
 !GA3/q13_github_action_scrape_table_sums_playwright/playwright/package.json
 !GA3/q13_github_action_scrape_table_sums_playwright/playwright/package-lock.json
 !GA3/q13_github_action_scrape_table_sums_playwright/playwright/scrape.js
 !GA3/q13_github_action_scrape_table_sums_playwright/q13_github_action_scrape_table_sums_playwright.md
-GA8/q01_secret_hash_chain/verify_hash.txt
-models/
