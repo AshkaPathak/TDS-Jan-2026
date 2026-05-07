@@ -1,10 +1,10 @@
-# q26 columnar json
+# GA3 — Q9: PDF Text Bounding Box Detection
 
-This README summarizes the question folder. The detailed solution remains in the files in this folder.
+This README summarizes the question folder. The detailed solution remains in `q09_pdf_text_bounding_box_detection.md`.
 
 ## Method
 
-Parsed, repaired, flattened, or transformed JSON into the schema required by the grader.
+Extracted structured information from PDF content and verified page/text/coordinate requirements.
 
 The implementation keeps the question-specific assets beside the writeup so the answer can be inspected and reproduced without searching elsewhere.
 
@@ -12,8 +12,14 @@ The implementation keeps the question-specific assets beside the writeup so the 
 
 | File | Purpose |
 | --- | --- |
-| `data_columnar.json` | data artifacts |
-| `to_columnar.py` | question writeup and supporting files |
+| `main.py` | Python API/service code |
+| `q09_pdf_text_bounding_box_detection.md` | Detailed question writeup |
+
+## Run or Reproduce
+
+```bash
+uvicorn main:app --host 0.0.0.0 --port 7860
+```
 
 ## Verification
 

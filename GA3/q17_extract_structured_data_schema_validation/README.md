@@ -1,10 +1,10 @@
-# q26 columnar json
+# GA3 — Q17: Extract Structured Data with Schema Validation (1 mark)
 
-This README summarizes the question folder. The detailed solution remains in the files in this folder.
+This README summarizes the question folder. The detailed solution remains in `q17_extract_structured_data_schema_validation.md`.
 
 ## Method
 
-Parsed, repaired, flattened, or transformed JSON into the schema required by the grader.
+Documented the problem, selected the appropriate tool or technique, implemented the answer, and recorded the verification step.
 
 The implementation keeps the question-specific assets beside the writeup so the answer can be inspected and reproduced without searching elsewhere.
 
@@ -12,8 +12,7 @@ The implementation keeps the question-specific assets beside the writeup so the 
 
 | File | Purpose |
 | --- | --- |
-| `data_columnar.json` | data artifacts |
-| `to_columnar.py` | question writeup and supporting files |
+| `q17_extract_structured_data_schema_validation.md` | Detailed question writeup |
 
 ## Verification
 

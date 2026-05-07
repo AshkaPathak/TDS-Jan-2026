@@ -1,10 +1,10 @@
-# q26 columnar json
+# q01_excel_operational_margin_consolidation
 
-This README summarizes the question folder. The detailed solution remains in the files in this folder.
+This README summarizes the question folder. The detailed solution remains in `q01_excel_operational_margin_consolidation.md`.
 
 ## Method
 
-Parsed, repaired, flattened, or transformed JSON into the schema required by the grader.
+Traced spreadsheet formulas or analytics steps carefully and verified the numerical result.
 
 The implementation keeps the question-specific assets beside the writeup so the answer can be inspected and reproduced without searching elsewhere.
 
@@ -12,8 +12,7 @@ The implementation keeps the question-specific assets beside the writeup so the 
 
 | File | Purpose |
 | --- | --- |
-| `data_columnar.json` | data artifacts |
-| `to_columnar.py` | question writeup and supporting files |
+| `q01_excel_operational_margin_consolidation.md` | Detailed question writeup |
 
 ## Verification
 

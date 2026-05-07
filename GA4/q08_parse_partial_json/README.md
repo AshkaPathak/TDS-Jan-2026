@@ -1,6 +1,6 @@
-# q26 columnar json
+# GA4 — Q8: Recovering Sales Data from Partial JSON
 
-This README summarizes the question folder. The detailed solution remains in the files in this folder.
+This README summarizes the question folder. The detailed solution remains in `q08_parse_partial_json.md`.
 
 ## Method
 
@@ -12,8 +12,7 @@ The implementation keeps the question-specific assets beside the writeup so the 
 
 | File | Purpose |
 | --- | --- |
-| `data_columnar.json` | data artifacts |
-| `to_columnar.py` | question writeup and supporting files |
+| `q08_parse_partial_json.md` | Detailed question writeup |
 
 ## Verification
 

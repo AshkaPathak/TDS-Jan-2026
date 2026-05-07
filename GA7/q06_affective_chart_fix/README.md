@@ -1,10 +1,10 @@
-# q26 columnar json
+# GA7 Q6 – Affective Chart Fix
 
-This README summarizes the question folder. The detailed solution remains in the files in this folder.
+This README summarizes the question folder. The detailed solution remains in `q06_affective_chart_fix.md`.
 
 ## Method
 
-Parsed, repaired, flattened, or transformed JSON into the schema required by the grader.
+Audited the visual or narrative issue, identified the flaw, and proposed the corrected interpretation or repair.
 
 The implementation keeps the question-specific assets beside the writeup so the answer can be inspected and reproduced without searching elsewhere.
 
@@ -12,8 +12,7 @@ The implementation keeps the question-specific assets beside the writeup so the 
 
 | File | Purpose |
 | --- | --- |
-| `data_columnar.json` | data artifacts |
-| `to_columnar.py` | question writeup and supporting files |
+| `q06_affective_chart_fix.md` | Detailed question writeup |
 
 ## Verification
 

@@ -1,10 +1,10 @@
-# q26 columnar json
+# q18 secure upload
 
 This README summarizes the question folder. The detailed solution remains in the files in this folder.
 
 ## Method
 
-Parsed, repaired, flattened, or transformed JSON into the schema required by the grader.
+Implemented the solution in Python with a small service or script and documented how to run it.
 
 The implementation keeps the question-specific assets beside the writeup so the answer can be inspected and reproduced without searching elsewhere.
 
@@ -12,8 +12,18 @@ The implementation keeps the question-specific assets beside the writeup so the 
 
 | File | Purpose |
 | --- | --- |
-| `data_columnar.json` | data artifacts |
-| `to_columnar.py` | question writeup and supporting files |
+| `Dockerfile` | Docker deployment |
+| `main.py` | Python API/service code |
+| `q-fastapi-file-validation.csv` | data artifacts |
+| `requirements.txt` | Python dependencies |
+
+## Run or Reproduce
+
+```bash
+pip install -r requirements.txt
+uvicorn main:app --host 0.0.0.0 --port 7860
+docker build -t tds-question .
+```
 
 ## Verification
 

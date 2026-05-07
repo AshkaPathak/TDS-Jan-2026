@@ -1,10 +1,10 @@
-# q26 columnar json
+# GA4 — Q20: Extracting Audio and Transcripts
 
-This README summarizes the question folder. The detailed solution remains in the files in this folder.
+This README summarizes the question folder. The detailed solution remains in `q20_extracting_audio_and_transcripts.md`.
 
 ## Method
 
-Parsed, repaired, flattened, or transformed JSON into the schema required by the grader.
+Processed media with the required AI or extraction workflow and checked the target timestamp/entity/value.
 
 The implementation keeps the question-specific assets beside the writeup so the answer can be inspected and reproduced without searching elsewhere.
 
@@ -12,8 +12,10 @@ The implementation keeps the question-specific assets beside the writeup so the 
 
 | File | Purpose |
 | --- | --- |
-| `data_columnar.json` | data artifacts |
-| `to_columnar.py` | question writeup and supporting files |
+| `audio.mp3` | media artifacts |
+| `audio.webm` | media artifacts |
+| `q20_extracting_audio_and_transcripts.md` | Detailed question writeup |
+| `segment.wav` | media artifacts |
 
 ## Verification
 

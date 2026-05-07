@@ -1,10 +1,10 @@
-# q26 columnar json
+# GA5 — Q16: DuckDB — Sales Over Time
 
-This README summarizes the question folder. The detailed solution remains in the files in this folder.
+This README summarizes the question folder. The detailed solution remains in `q16_duckdb_sales_over_time.md`.
 
 ## Method
 
-Parsed, repaired, flattened, or transformed JSON into the schema required by the grader.
+Solved with SQL-style transformations, aggregation, joins, filtering, and a final query/result check.
 
 The implementation keeps the question-specific assets beside the writeup so the answer can be inspected and reproduced without searching elsewhere.
 
@@ -12,8 +12,7 @@ The implementation keeps the question-specific assets beside the writeup so the 
 
 | File | Purpose |
 | --- | --- |
-| `data_columnar.json` | data artifacts |
-| `to_columnar.py` | question writeup and supporting files |
+| `q16_duckdb_sales_over_time.md` | Detailed question writeup |
 
 ## Verification
 

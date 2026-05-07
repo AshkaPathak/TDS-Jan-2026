@@ -1,6 +1,6 @@
-# q26 columnar json
+# GA4 — Q15: Recursive Corrupted JSON Log Processor with Streaming Recovery
 
-This README summarizes the question folder. The detailed solution remains in the files in this folder.
+This README summarizes the question folder. The detailed solution remains in `q15_recursive_corrupted_json_fixer.md`.
 
 ## Method
 
@@ -12,8 +12,8 @@ The implementation keeps the question-specific assets beside the writeup so the 
 
 | File | Purpose |
 | --- | --- |
-| `data_columnar.json` | data artifacts |
-| `to_columnar.py` | question writeup and supporting files |
+| `corrupted_logs.json` | data artifacts |
+| `q15_recursive_corrupted_json_fixer.md` | Detailed question writeup |
 
 ## Verification
 

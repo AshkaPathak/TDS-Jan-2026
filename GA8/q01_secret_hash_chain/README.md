@@ -1,10 +1,10 @@
-# q26 columnar json
+# GA8 — Q1: GitHub Actions Secret Hash Chain
 
-This README summarizes the question folder. The detailed solution remains in the files in this folder.
+This README summarizes the question folder. The detailed solution remains in `q01_secret_hash_chain.md`.
 
 ## Method
 
-Parsed, repaired, flattened, or transformed JSON into the schema required by the grader.
+Used a GitHub Actions workflow, trigger configuration, and run-log verification.
 
 The implementation keeps the question-specific assets beside the writeup so the answer can be inspected and reproduced without searching elsewhere.
 
@@ -12,8 +12,7 @@ The implementation keeps the question-specific assets beside the writeup so the 
 
 | File | Purpose |
 | --- | --- |
-| `data_columnar.json` | data artifacts |
-| `to_columnar.py` | question writeup and supporting files |
+| `q01_secret_hash_chain.md` | Detailed question writeup |
 
 ## Verification
 

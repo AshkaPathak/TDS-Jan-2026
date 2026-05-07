@@ -1,10 +1,10 @@
-# q26 columnar json
+# GA7 — Q8: Prompt Reverse Engineering
 
-This README summarizes the question folder. The detailed solution remains in the files in this folder.
+This README summarizes the question folder. The detailed solution remains in `q08_prompt_reverse_engineering.md`.
 
 ## Method
 
-Parsed, repaired, flattened, or transformed JSON into the schema required by the grader.
+Used an LLM or prompt/API workflow with structured inputs, controlled outputs, and validation against the expected format.
 
 The implementation keeps the question-specific assets beside the writeup so the answer can be inspected and reproduced without searching elsewhere.
 
@@ -12,8 +12,7 @@ The implementation keeps the question-specific assets beside the writeup so the 
 
 | File | Purpose |
 | --- | --- |
-| `data_columnar.json` | data artifacts |
-| `to_columnar.py` | question writeup and supporting files |
+| `q08_prompt_reverse_engineering.md` | Detailed question writeup |
 
 ## Verification
 

@@ -1,10 +1,10 @@
-# q26 columnar json
+# GA8 — Q2: GCP Gemini API Math Puzzle
 
-This README summarizes the question folder. The detailed solution remains in the files in this folder.
+This README summarizes the question folder. The detailed solution remains in `q02_gemini_math_puzzle.md`.
 
 ## Method
 
-Parsed, repaired, flattened, or transformed JSON into the schema required by the grader.
+Prepared a cloud-deployable API or script, with runtime dependencies and endpoint verification.
 
 The implementation keeps the question-specific assets beside the writeup so the answer can be inspected and reproduced without searching elsewhere.
 
@@ -12,8 +12,7 @@ The implementation keeps the question-specific assets beside the writeup so the 
 
 | File | Purpose |
 | --- | --- |
-| `data_columnar.json` | data artifacts |
-| `to_columnar.py` | question writeup and supporting files |
+| `q02_gemini_math_puzzle.md` | Detailed question writeup |
 
 ## Verification
 

@@ -1,10 +1,10 @@
-# q26 columnar json
+# GA2 — Q6: Create a GitHub Action
 
-This README summarizes the question folder. The detailed solution remains in the files in this folder.
+This README summarizes the question folder. The detailed solution remains in `q06_github_action.md`.
 
 ## Method
 
-Parsed, repaired, flattened, or transformed JSON into the schema required by the grader.
+Used a GitHub Actions workflow, trigger configuration, and run-log verification.
 
 The implementation keeps the question-specific assets beside the writeup so the answer can be inspected and reproduced without searching elsewhere.
 
@@ -12,8 +12,8 @@ The implementation keeps the question-specific assets beside the writeup so the 
 
 | File | Purpose |
 | --- | --- |
-| `data_columnar.json` | data artifacts |
-| `to_columnar.py` | question writeup and supporting files |
+| `q06_github_action.md` | Detailed question writeup |
+| `retrigger.txt` | question writeup and supporting files |
 
 ## Verification
 

@@ -1,10 +1,10 @@
-# q26 columnar json
+# GA5 — Q7: Outlier Detection with Excel Z-Score Method
 
-This README summarizes the question folder. The detailed solution remains in the files in this folder.
+This README summarizes the question folder. The detailed solution remains in `q07_excel_outlier_detection.md`.
 
 ## Method
 
-Parsed, repaired, flattened, or transformed JSON into the schema required by the grader.
+Traced spreadsheet formulas or analytics steps carefully and verified the numerical result.
 
 The implementation keeps the question-specific assets beside the writeup so the answer can be inspected and reproduced without searching elsewhere.
 
@@ -12,8 +12,9 @@ The implementation keeps the question-specific assets beside the writeup so the 
 
 | File | Purpose |
 | --- | --- |
-| `data_columnar.json` | data artifacts |
-| `to_columnar.py` | question writeup and supporting files |
+| `q-outlier-detection-excel.csv` | data artifacts |
+| `q07_excel_outlier_detection.md` | Detailed question writeup |
+| `solution.py` | question writeup and supporting files |
 
 ## Verification
 

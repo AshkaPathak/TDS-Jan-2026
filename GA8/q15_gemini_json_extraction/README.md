@@ -1,10 +1,10 @@
-# q26 columnar json
+# GA8 — Q15: GCP AI Studio — Gemini JSON Data Extraction
 
-This README summarizes the question folder. The detailed solution remains in the files in this folder.
+This README summarizes the question folder. The detailed solution remains in `q15_gemini_json_extraction.md`.
 
 ## Method
 
-Parsed, repaired, flattened, or transformed JSON into the schema required by the grader.
+Prepared a cloud-deployable API or script, with runtime dependencies and endpoint verification.
 
 The implementation keeps the question-specific assets beside the writeup so the answer can be inspected and reproduced without searching elsewhere.
 
@@ -12,8 +12,8 @@ The implementation keeps the question-specific assets beside the writeup so the 
 
 | File | Purpose |
 | --- | --- |
-| `data_columnar.json` | data artifacts |
-| `to_columnar.py` | question writeup and supporting files |
+| `extract_json.py` | question writeup and supporting files |
+| `q15_gemini_json_extraction.md` | Detailed question writeup |
 
 ## Verification
 

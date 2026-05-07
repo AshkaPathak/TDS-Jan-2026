@@ -1,10 +1,10 @@
-# q26 columnar json
+# GA5 — Q21: Rideshare Geospatial Revenue Analysis
 
-This README summarizes the question folder. The detailed solution remains in the files in this folder.
+This README summarizes the question folder. The detailed solution remains in `q21_rideshare_geospatial_analysis.md`.
 
 ## Method
 
-Parsed, repaired, flattened, or transformed JSON into the schema required by the grader.
+Used geospatial distance or area logic, usually Haversine or Voronoi-style computation, then validated the selected location/result.
 
 The implementation keeps the question-specific assets beside the writeup so the answer can be inspected and reproduced without searching elsewhere.
 
@@ -12,8 +12,8 @@ The implementation keeps the question-specific assets beside the writeup so the 
 
 | File | Purpose |
 | --- | --- |
-| `data_columnar.json` | data artifacts |
-| `to_columnar.py` | question writeup and supporting files |
+| `q21_rideshare_geospatial_analysis.md` | Detailed question writeup |
+| `rideshare_trips.csv` | data artifacts |
 
 ## Verification
 

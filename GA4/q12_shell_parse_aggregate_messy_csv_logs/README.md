@@ -1,10 +1,10 @@
-# q26 columnar json
+# GA4 — Q12: Shell Parse and Aggregate Messy CSV Transaction Logs
 
-This README summarizes the question folder. The detailed solution remains in the files in this folder.
+This README summarizes the question folder. The detailed solution remains in `q12_shell_parse_aggregate_messy_csv_logs.md`.
 
 ## Method
 
-Parsed, repaired, flattened, or transformed JSON into the schema required by the grader.
+Used shell commands and pipelines to parse, transform, aggregate, and verify the requested output.
 
 The implementation keeps the question-specific assets beside the writeup so the answer can be inspected and reproduced without searching elsewhere.
 
@@ -12,8 +12,7 @@ The implementation keeps the question-specific assets beside the writeup so the 
 
 | File | Purpose |
 | --- | --- |
-| `data_columnar.json` | data artifacts |
-| `to_columnar.py` | question writeup and supporting files |
+| `q12_shell_parse_aggregate_messy_csv_logs.md` | Detailed question writeup |
 
 ## Verification
 

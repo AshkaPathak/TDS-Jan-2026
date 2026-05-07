@@ -1,10 +1,10 @@
-# q26 columnar json
+# GA5 — Q13: Embeddings — Semantic Outlier Detection
 
-This README summarizes the question folder. The detailed solution remains in the files in this folder.
+This README summarizes the question folder. The detailed solution remains in `q13_semantic_outlier_embeddings.md`.
 
 ## Method
 
-Parsed, repaired, flattened, or transformed JSON into the schema required by the grader.
+Used embedding vectors or semantic similarity, then ranked or clustered results according to the task.
 
 The implementation keeps the question-specific assets beside the writeup so the answer can be inspected and reproduced without searching elsewhere.
 
@@ -12,8 +12,7 @@ The implementation keeps the question-specific assets beside the writeup so the 
 
 | File | Purpose |
 | --- | --- |
-| `data_columnar.json` | data artifacts |
-| `to_columnar.py` | question writeup and supporting files |
+| `q13_semantic_outlier_embeddings.md` | Detailed question writeup |
 
 ## Verification
 

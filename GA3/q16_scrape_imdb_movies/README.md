@@ -1,6 +1,6 @@
-# q26 columnar json
+# GA3 — Q16: IMDb Low-Rated Movies (2.0–4.0) → JSON (First 25)
 
-This README summarizes the question folder. The detailed solution remains in the files in this folder.
+This README summarizes the question folder. The detailed solution remains in `q16_scrape_imdb_movies.md`.
 
 ## Method
 
@@ -12,8 +12,9 @@ The implementation keeps the question-specific assets beside the writeup so the 
 
 | File | Purpose |
 | --- | --- |
-| `data_columnar.json` | data artifacts |
-| `to_columnar.py` | question writeup and supporting files |
+| `answer.json` | data artifacts |
+| `q16_scrape_imdb_movies.md` | Detailed question writeup |
+| `scrape_imdb.js` | JavaScript/Playwright automation |
 
 ## Verification
 

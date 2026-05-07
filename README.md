@@ -1,110 +1,45 @@
-# TDS Jan 2026 — Assignment Attempts
+# TDS Jan 2026 Assignment Repository
 
-This repository documents **how I attempt and solve questions** from the **Tools in Data Science (TDS)** course.
+This repository is a structured archive of Tools in Data Science January 2026 assignment work. It is organized by graded assignment and by question, with README files used as navigation and method summaries.
 
-It is structured to reflect my thinking process, debugging strategy, and deployment workflow — not just final answers.
+The goal is to make every answer auditable: each question should show what was asked, what method was used, what artifact was produced, and how the result was verified.
 
----
+## Assignment Map
 
-## Philosophy
+| Folder | Questions Indexed | Main Methods Covered |
+| --- | ---: | --- |
+| `GA1/` | 25 | prompting, command-line work, code debugging, Git-aware file operations, spreadsheets, SQL, browser inspection, and compact data representation |
+| `GA2/` | 16 | Git history, GitHub Pages, Actions, dependency automation, Codespaces, Gists, FastAPI, Docker, and Cloudflare deployment |
+| `GA3/` | 18 | structured LLM outputs, FastAPI endpoints, scheduled workflows, browser automation, PDF/video/audio extraction, and web scraping |
+| `GA4/` | 20 | Excel operations, dbt models, OpenRefine, JSON flattening and recovery, shell pipelines, FastAPI sentiment APIs, DuckDB, image/audio reconstruction, and entity disambiguation |
+| `GA5/` | 21 | embeddings, CLIP search, topic modeling, Excel analytics, forecasting, geospatial distance calculations, DuckDB queries, moving averages, and RAG |
+| `GA6/` | 15 | property-based testing, eval rubrics, robustness audits, data contracts, thresholding, flaky test analysis, leakage checks, idempotency checks, and coverage gaps |
+| `GA7/` | 15 | chart critique, encoding fixes, data-narrative reconciliation, prompt repair, anomaly prioritization, poisoned-document detection, and cost/performance analysis |
+| `GA8/` | 15 | secret hashing, Gemini API calls, FastAPI model services, Hugging Face Spaces, Docker multi-stage builds, Ruff CI, Cloud Run, Cloud Functions, and hash verification APIs |
 
-This repository is not just a submission archive.
+## README Coverage
 
-Each question is approached with:
+- Every GA folder from `GA1` to `GA8` has a README index.
+- Question folders have README files that summarize the specific method and point to the detailed writeup.
+- Existing preserved task text such as `original_README.md` is kept as source material rather than rewritten as project documentation.
 
-- Clear problem breakdown  
-- Identification of constraints and edge cases  
-- Structured solution strategy  
-- Reproducible commands and code  
-- Deployment and verification steps  
-- Clean Git history that reflects iteration and debugging  
+## Repository Conventions
 
-The focus is on clarity, reproducibility, and technical discipline.
+- Markdown writeups explain the problem, constraints, method, implementation, verification, and final answer where applicable.
+- Code, data, Dockerfiles, deployment configs, Playwright scripts, generated images, and outputs stay next to the question that uses them.
+- README files are navigation and audit summaries, not replacements for detailed question writeups.
 
----
+## Fast Navigation
 
-## Repository Structure
+- [GA1](GA1/README.md): foundations, prompts, shell, SQL, spreadsheets, browser inspection, JSON conversion
+- [GA2](GA2/README.md): GitHub, deployment, Actions, Docker, APIs, Cloudflare
+- [GA3](GA3/README.md): LLM APIs, scraping, browser automation, PDF/audio/video extraction
+- [GA4](GA4/README.md): data preparation, dbt, JSON recovery, shell transforms, DuckDB, entity disambiguation
+- [GA5](GA5/README.md): embeddings, analytics, forecasting, geospatial computation, RAG
+- [GA6](GA6/README.md): evals, quality engineering, audits, leakage and coverage checks
+- [GA7](GA7/README.md): visualization critique, narrative repair, anomaly and flaw prioritization
+- [GA8](GA8/README.md): MLOps, GCP, Cloud Run, Cloud Functions, Docker, Gemini APIs
 
-```
-TDS-Jan-2026/
-│
-├── GA1/                  # Graded Assignment 1
-│   ├── q01_*.md          # Question-wise writeups
-│   ├── dataflow-pipeline/
-│   ├── email.json
-│   └── ...
-│
-├── GA2/                  # Graded Assignment 2
-│   ├── q01_*.md
-│   ├── q02_*.md
-│   └── ...
-│
-└── README.md
-```
+## Reproducibility Intent
 
-Each GA folder is self-contained and contains all related artifacts for that assignment.
-
----
-
-## Question Documentation Format
-
-Each question markdown file typically contains:
-
-### 1. Problem Summary  
-Clear restatement of the problem.
-
-### 2. Constraints / Common Failure Points  
-Validation errors, formatting requirements, and edge cases.
-
-### 3. Strategy  
-Reasoned approach before implementation.
-
-### 4. Implementation  
-Commands, scripts, configuration, or code used to solve the problem.
-
-### 5. Verification  
-How the output was validated (CLI checks, API tests, hashes, etc.).
-
-### 6. GitHub Steps  
-Exact steps used to structure and push the solution.
-
----
-
-## Tools Used
-
-- Python 3.11+
-- FastAPI
-- uv / pip
-- Git & GitHub
-- Bash utilities
-- JSON and Markdown
-- Deployment platforms (e.g., Render when required)
-
----
-
-## Workflow Discipline
-
-- `git mv` used to preserve history when restructuring  
-- Question-wise commits with descriptive messages  
-- Clean folder separation between assignments  
-- Deterministic outputs wherever possible  
-- No unnecessary large files  
-
----
-
-## Purpose of This Repository
-
-This repository serves as:
-
-- A structured record of my TDS learning process  
-- A reproducible reference for deployment-heavy questions  
-- A technical audit trail of my problem-solving approach  
-
-It reflects both correctness and method.
-
----
-
-## Author
-
-Ashka Pathak  
-23f3002663@ds.study.iitm.ac.in
+This repo is not just a dump of final answers. It is meant to preserve the reasoning path and the practical tool choices behind each answer, so future review can trace from question to method to artifact.

@@ -1,10 +1,10 @@
-# q26 columnar json
+# q18_llm_embeddings_rag
 
-This README summarizes the question folder. The detailed solution remains in the files in this folder.
+This README summarizes the question folder. The detailed solution remains in `q18_llm_embeddings_rag.md`.
 
 ## Method
 
-Parsed, repaired, flattened, or transformed JSON into the schema required by the grader.
+Used embedding vectors or semantic similarity, then ranked or clustered results according to the task.
 
 The implementation keeps the question-specific assets beside the writeup so the answer can be inspected and reproduced without searching elsewhere.
 
@@ -12,8 +12,8 @@ The implementation keeps the question-specific assets beside the writeup so the 
 
 | File | Purpose |
 | --- | --- |
-| `data_columnar.json` | data artifacts |
-| `to_columnar.py` | question writeup and supporting files |
+| `company_policies.md` | question writeup and supporting files |
+| `q18_llm_embeddings_rag.md` | Detailed question writeup |
 
 ## Verification
 

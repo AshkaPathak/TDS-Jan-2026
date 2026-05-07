@@ -1,37 +1,70 @@
-# Cross-Lingual Entity Disambiguation Challenge
+# GA4 Q16: Cross-Lingual Entity Disambiguation Dataset
+
+This folder contains the dataset files used by the GA4 Q16 cross-lingual entity disambiguation challenge. The task is to map each document mention to the correct canonical historical entity.
 
 ## Dataset
-- **documents.jsonl**: 1000 historical document excerpts across 15 languages
-- **entity_reference.csv**: Reference list of 19 canonical historical entities
 
-## Document Format (JSONL)
-Each line is a JSON object with:
-- `doc_id`: Unique document identifier (DOC-0001 to DOC-1000)
-- `language`: ISO 639-1 language code (en, es, fr, de, it, pt, nl, ru, pl, cs, ar, zh, ja, ko, tr)
-- `year`: Year of the event described
-- `text`: The document text mentioning a historical figure
-- `mentioned_name`: The name as it appears in the document (may include typos)
-- `source_region`: Geographic region
+| File | Purpose |
+| --- | --- |
+| `documents.jsonl` | Document mentions to classify |
+| `entity_reference.csv` | Canonical entity metadata |
 
-## Entity Reference CSV
-Contains canonical entity information:
-- `entity_id`: Unique entity identifier (E001, E002, ...)
-- `canonical_name`: The standardised English name
-- `role`: Historical role (King, Emperor, etc.)
-- `era`: Time period
-- `region`: Geographic origin
+## Document Format
 
-## Task
-Map each document to its correct entity_id. Names like "Juan", "Jean", "Johann",
-"Giovanni", "João", and "Ivan" may all refer to DIFFERENT historical persons.
-Your pipeline must disambiguate based on context, era, region, and cross-lingual
-name equivalences.
+Each line in `documents.jsonl` is one JSON object with:
+
+- `doc_id`: document identifier such as `DOC-0001`
+- `language`: ISO language code
+- `year`: event year
+- `text`: document excerpt
+- `mentioned_name`: name as written in the document
+- `source_region`: geographic context
+
+## Entity Reference Format
+
+`entity_reference.csv` contains:
+
+- `entity_id`: canonical ID such as `E001`
+- `canonical_name`: standardized English name
+- `role`: historical role
+- `era`: time period
+- `region`: geographic origin
+
+## Intended Method
+
+The full question writeup is in `../q16_cross_lingual_entity_disambiguation.md`. The intended disambiguation method combines:
+
+1. Name normalization and alias matching across languages.
+2. Ordinal and title extraction from document text.
+3. Region matching between document context and entity metadata.
+4. Temporal filtering using `year` and `era`.
+5. Special-case handling for repeated royal names and translated names.
+6. A scoring system that ranks candidate entities by combined evidence.
+
+The minimal `../solve_q16.py` script currently performs a simpler baseline:
+
+1. Load `entity_reference.csv`.
+2. Normalize canonical names and document mentions.
+3. Match by direct substring overlap.
+4. Fall back to the first entity if no match is found.
+5. Write `output.csv` with `doc_id,entity_id`.
 
 ## Output Format
-Submit a CSV with exactly two columns:
-```
+
+The required output is:
+
+```csv
 doc_id,entity_id
 DOC-0001,E003
 DOC-0002,E017
-...
 ```
+
+## Run
+
+From `GA4/q16_cross_lingual_entity_disambiguation/`:
+
+```bash
+python solve_q16.py
+```
+
+This generates `output.csv`.

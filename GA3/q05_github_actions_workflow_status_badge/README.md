@@ -1,10 +1,10 @@
-# q26 columnar json
+# GA3 — Q5: GitHub Actions Workflow with Status Badge (1 Mark)
 
-This README summarizes the question folder. The detailed solution remains in the files in this folder.
+This README summarizes the question folder. The detailed solution remains in `q05_github_actions_workflow_status_badge.md`.
 
 ## Method
 
-Parsed, repaired, flattened, or transformed JSON into the schema required by the grader.
+Used a GitHub Actions workflow, trigger configuration, and run-log verification.
 
 The implementation keeps the question-specific assets beside the writeup so the answer can be inspected and reproduced without searching elsewhere.
 
@@ -12,8 +12,7 @@ The implementation keeps the question-specific assets beside the writeup so the 
 
 | File | Purpose |
 | --- | --- |
-| `data_columnar.json` | data artifacts |
-| `to_columnar.py` | question writeup and supporting files |
+| `q05_github_actions_workflow_status_badge.md` | Detailed question writeup |
 
 ## Verification
 

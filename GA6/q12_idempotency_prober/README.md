@@ -1,10 +1,10 @@
-# q26 columnar json
+# GA6 — Q12: The Idempotency Prober
 
-This README summarizes the question folder. The detailed solution remains in the files in this folder.
+This README summarizes the question folder. The detailed solution remains in `q12_idempotency_prober.md`.
 
 ## Method
 
-Parsed, repaired, flattened, or transformed JSON into the schema required by the grader.
+Applied an evaluation, audit, or testing method to detect failure modes and prioritize fixes.
 
 The implementation keeps the question-specific assets beside the writeup so the answer can be inspected and reproduced without searching elsewhere.
 
@@ -12,8 +12,9 @@ The implementation keeps the question-specific assets beside the writeup so the 
 
 | File | Purpose |
 | --- | --- |
-| `data_columnar.json` | data artifacts |
-| `to_columnar.py` | question writeup and supporting files |
+| `23f3002663_ds_study_iitm_ac_in_records.csv` | data artifacts |
+| `q12_idempotency_prober.md` | Detailed question writeup |
+| `solution.py` | question writeup and supporting files |
 
 ## Verification
 

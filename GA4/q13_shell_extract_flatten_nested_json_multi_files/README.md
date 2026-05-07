@@ -1,6 +1,6 @@
-# q26 columnar json
+# GA4 — Q13: Shell Extract and Flatten Nested JSON from Multiple Files
 
-This README summarizes the question folder. The detailed solution remains in the files in this folder.
+This README summarizes the question folder. The detailed solution remains in `q13_shell_extract_flatten_nested_json_multi_files.md`.
 
 ## Method
 
@@ -12,8 +12,7 @@ The implementation keeps the question-specific assets beside the writeup so the 
 
 | File | Purpose |
 | --- | --- |
-| `data_columnar.json` | data artifacts |
-| `to_columnar.py` | question writeup and supporting files |
+| `q13_shell_extract_flatten_nested_json_multi_files.md` | Detailed question writeup |
 
 ## Verification
 
